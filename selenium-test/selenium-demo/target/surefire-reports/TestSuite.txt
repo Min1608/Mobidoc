@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 51.15 s <<< FAILURE! -- in TestSuite
-com.may.demo.MakeReservationTest.testMakeReservationSuccessfully -- Time elapsed: 3.110 s <<< FAILURE!
+Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 52.32 s <<< FAILURE! -- in TestSuite
+com.may.demo.MakeReservationTest.testMakeReservationSuccessfully -- Time elapsed: 3.082 s <<< FAILURE!
 org.openqa.selenium.ElementClickInterceptedException: 
 element click intercepted: Element <label data-v-5d01699a="">...</label> is not clickable at point (946, 658). Other element would receive the click: <ul data-v-5d01699a="">...</ul>
   (Session info: chrome=135.0.7049.115)
 Build info: version: '4.19.1', revision: 'abe0ee07dc'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0463f714a997574379b51458560d1077, clickElement {id=f.8E5369F5C3C9E90922A76F50424E8A92.d.2F21CCDE8195E1ADD27986852F28E212.e.218}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\minht\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59372}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59372/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (0463f714a997574379b51458560d1077)] -> xpath: //div[contains(@class,'time-box-list')]//label]
-Session ID: 0463f714a997574379b51458560d1077
+Command: [98f58bb66046f78fb2b1674979b9782d, clickElement {id=f.2DBD7D5FC4607EDEDC8F864D3FDC54B6.d.EA14755BE99D5EFE6493832B2925DC88.e.213}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55542}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55542/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (98f58bb66046f78fb2b1674979b9782d)] -> xpath: //div[contains(@class,'time-box-list')]//label]
+Session ID: 98f58bb66046f78fb2b1674979b9782d
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)

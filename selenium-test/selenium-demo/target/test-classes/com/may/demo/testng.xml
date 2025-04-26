@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suite name="LoginTest Suite">
-    <test name="Login Tests">
-        <classes>
-            <class name="com.may.demo.LoginTest"/>
-        </classes>
-    </test>
-</suite>

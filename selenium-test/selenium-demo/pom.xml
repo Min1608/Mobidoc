@@ -60,7 +60,8 @@
                     <includes>
                         <include>**/*Test.java</include>
                     </includes>
-                    <useDefaultListeners>false</useDefaultListeners>
+                    <useDefaultListeners>true</useDefaultListeners>
+                    <forkCount>1</forkCount>
                 </configuration>
             </plugin>
 
@@ -76,15 +77,23 @@
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
+                        <configuration>
+                            <destFile>${project.build.directory}/jacoco.exec</destFile>
+                            <append>true</append>
+                        </configuration>
                     </execution>
 
-                    <!-- Tạo report sau khi test xong -->
+                    <!-- Tạo báo cáo sau khi test xong -->
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                            <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

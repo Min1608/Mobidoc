@@ -2,6 +2,7 @@ package com.may.demo;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -9,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -173,24 +175,28 @@ public class MakeReservationTest {
 
         Thread.sleep(500);
 
- // Choose time
         // Đợi tất cả khung giờ hiển thị
         List<WebElement> timeSlots = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
                 By.xpath("//div[contains(@class,'time-box-list')]//label")));
 
-        // Chọn khung giờ cuối cùng
-        WebElement lastSlot = timeSlots.get(timeSlots.size() - 1);
+        // Chọn một khung giờ bất kỳ (ví dụ: khung giờ đầu tiên, hoặc ngẫu nhiên)
+        WebElement randomSlot = timeSlots.get(new Random().nextInt(timeSlots.size())); // Lấy ngẫu nhiên một phần tử từ danh sách
 
-        // Scroll tới nó để đảm bảo thấy
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", lastSlot);
+        // Cuộn tới phần tử để đảm bảo nó không bị che khuất
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", randomSlot);
 
         // Đợi cho phần tử có thể click
-        wait.until(ExpectedConditions.elementToBeClickable(lastSlot));
+        wait.until(ExpectedConditions.elementToBeClickable(randomSlot));
 
-        // Click label (sẽ kích hoạt chọn và highlight xanh)
-        lastSlot.click();
+        // Sử dụng Actions class để click vào phần tử
+        Actions actions = new Actions(driver);
+        actions.moveToElement(randomSlot).click().perform();
 
-        System.out.println("Đã chọn khung giờ đầu tiên.");
+        // Hoặc dùng JavaScript để click nếu Actions không hiệu quả
+        // ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+        // randomSlot);
+
+        System.out.println("Đã chọn khung giờ bất kỳ.");
         sleep(500); // Đợi hiệu ứng nếu có
 
         // Click nút đặt lịch
