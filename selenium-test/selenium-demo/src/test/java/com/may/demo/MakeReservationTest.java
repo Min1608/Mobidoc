@@ -25,7 +25,7 @@ public class MakeReservationTest {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    // Khai báo biến username và password
+    // Declare username and password variables
     private String validUsername;
     private String validPassword;
     private String validName;
@@ -43,7 +43,7 @@ public class MakeReservationTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Đặt thời gian chờ là 10 giây
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         validUsername = "mobidoc";
         validPassword = "1q2w3e4r!!";
@@ -62,7 +62,7 @@ public class MakeReservationTest {
 
     @BeforeMethod
     public void loginBeforeEachTest() {
-        driver.get("https://doctor-stag.mobidoc.at/login");
+        driver.get("https://doctor.mobidoc.at/login");
         login(); // Đăng nhập và click luôn nút Make Reservation
     }
 
@@ -102,9 +102,7 @@ public class MakeReservationTest {
 
         // Xử lý cửa sổ mới sau khi click vào Make Reservation
         handleNewWindow();
-
-        // Chờ một chút để đảm bảo trang mới đã tải xong
-        sleep(2000); // Điều chỉnh thời gian chờ nếu cần thiết
+        sleep(2000);
 
         // Kiểm tra một phần tử trong cửa sổ mới (ví dụ kiểm tra tiêu đề)
         System.out.println("Open new window: " + driver.getTitle());

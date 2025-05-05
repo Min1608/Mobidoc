@@ -1,172 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="8" failed="1" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-26T15:24:48 GMT+07:00" name="Surefire suite" finished-at="2025-04-26T15:25:39 GMT+07:00" duration-ms="51714">
+  <suite started-at="2025-05-05T14:21:48 GMT+07:00" name="Surefire suite" finished-at="2025-05-05T14:23:12 GMT+07:00" duration-ms="83420">
     <groups>
     </groups>
-    <test started-at="2025-04-26T15:24:48 GMT+07:00" name="Surefire test" finished-at="2025-04-26T15:25:39 GMT+07:00" duration-ms="51714">
+    <test started-at="2025-05-05T14:21:48 GMT+07:00" name="Surefire test" finished-at="2025-05-05T14:23:12 GMT+07:00" duration-ms="83420">
       <class name="com.may.demo.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:48 GMT+07:00" name="setUp" finished-at="2025-04-26T15:24:50 GMT+07:00" duration-ms="2465" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:21:48 GMT+07:00" name="setUp" finished-at="2025-05-05T14:21:52 GMT+07:00" duration-ms="3615" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:50 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:24:53 GMT+07:00" duration-ms="3211" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:21:52 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:21:55 GMT+07:00" duration-ms="2553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testEmptyPassword()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:53 GMT+07:00" name="testEmptyPassword" finished-at="2025-04-26T15:24:54 GMT+07:00" duration-ms="265" status="PASS">
+        <test-method signature="testEmptyPassword()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:21:55 GMT+07:00" name="testEmptyPassword" finished-at="2025-05-05T14:21:55 GMT+07:00" duration-ms="379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmptyPassword -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:54 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:24:54 GMT+07:00" duration-ms="620" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:21:55 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:21:56 GMT+07:00" duration-ms="728" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testEmptyUsername()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:54 GMT+07:00" name="testEmptyUsername" finished-at="2025-04-26T15:24:55 GMT+07:00" duration-ms="188" status="PASS">
+        <test-method signature="testEmptyUsername()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:21:56 GMT+07:00" name="testEmptyUsername" finished-at="2025-05-05T14:21:56 GMT+07:00" duration-ms="251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEmptyUsername -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:55 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:24:55 GMT+07:00" duration-ms="471" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:21:56 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:21:57 GMT+07:00" duration-ms="667" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testValidLogin()[pri:1, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:55 GMT+07:00" name="testValidLogin" finished-at="2025-04-26T15:24:59 GMT+07:00" duration-ms="3943" status="PASS">
+        <test-method signature="testValidLogin()[pri:1, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:21:57 GMT+07:00" name="testValidLogin" finished-at="2025-05-05T14:22:02 GMT+07:00" duration-ms="5090" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:24:59 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:25:00 GMT+07:00" duration-ms="880" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:02 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:22:03 GMT+07:00" duration-ms="1033" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testInvalidUsername()[pri:2, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:00 GMT+07:00" name="testInvalidUsername" finished-at="2025-04-26T15:25:04 GMT+07:00" duration-ms="3776" status="PASS">
+        <test-method signature="testInvalidUsername()[pri:2, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:03 GMT+07:00" name="testInvalidUsername" finished-at="2025-05-05T14:22:07 GMT+07:00" duration-ms="4147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidUsername -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:04 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:25:04 GMT+07:00" duration-ms="473" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:07 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:22:08 GMT+07:00" duration-ms="703" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testInvalidPassword()[pri:3, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:04 GMT+07:00" name="testInvalidPassword" finished-at="2025-04-26T15:25:08 GMT+07:00" duration-ms="3745" status="PASS">
+        <test-method signature="testInvalidPassword()[pri:3, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:08 GMT+07:00" name="testInvalidPassword" finished-at="2025-05-05T14:22:12 GMT+07:00" duration-ms="3837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidPassword -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:08 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:25:08 GMT+07:00" duration-ms="402" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:12 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:22:12 GMT+07:00" duration-ms="926" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testNonExistentUser()[pri:6, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:08 GMT+07:00" name="testNonExistentUser" finished-at="2025-04-26T15:25:13 GMT+07:00" duration-ms="4448" status="PASS">
+        <test-method signature="testNonExistentUser()[pri:6, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:12 GMT+07:00" name="testNonExistentUser" finished-at="2025-05-05T14:22:18 GMT+07:00" duration-ms="5853" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNonExistentUser -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:13 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:25:13 GMT+07:00" duration-ms="424" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:18 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:22:19 GMT+07:00" duration-ms="752" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testViewPasswordToggle()[pri:7, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:13 GMT+07:00" name="testViewPasswordToggle" finished-at="2025-04-26T15:25:18 GMT+07:00" duration-ms="5171" status="PASS">
+        <test-method signature="testViewPasswordToggle()[pri:7, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:19 GMT+07:00" name="testViewPasswordToggle" finished-at="2025-05-05T14:22:24 GMT+07:00" duration-ms="5220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testViewPasswordToggle -->
-        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:18 GMT+07:00" name="navigateToLoginPage" finished-at="2025-04-26T15:25:19 GMT+07:00" duration-ms="876" status="PASS">
+        <test-method is-config="true" signature="navigateToLoginPage()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:24 GMT+07:00" name="navigateToLoginPage" finished-at="2025-05-05T14:22:25 GMT+07:00" duration-ms="1172" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLoginPage -->
-        <test-method signature="testSaveLoginInformation()[pri:8, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:19 GMT+07:00" name="testSaveLoginInformation" finished-at="2025-04-26T15:25:26 GMT+07:00" duration-ms="7333" status="PASS">
+        <test-method signature="testSaveLoginInformation()[pri:8, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:25 GMT+07:00" name="testSaveLoginInformation" finished-at="2025-05-05T14:22:34 GMT+07:00" duration-ms="9021" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSaveLoginInformation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.may.demo.LoginTest@1b2c4efb]" started-at="2025-04-26T15:25:26 GMT+07:00" name="tearDown" finished-at="2025-04-26T15:25:27 GMT+07:00" duration-ms="201" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.may.demo.LoginTest@544820b7]" started-at="2025-05-05T14:22:34 GMT+07:00" name="tearDown" finished-at="2025-05-05T14:22:35 GMT+07:00" duration-ms="276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.may.demo.LoginTest -->
       <class name="com.may.demo.MakeReservationTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.may.demo.MakeReservationTest@6f2cfcc2]" started-at="2025-04-26T15:25:27 GMT+07:00" name="setUp" finished-at="2025-04-26T15:25:27 GMT+07:00" duration-ms="774" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.may.demo.MakeReservationTest@7d42c224]" started-at="2025-05-05T14:22:35 GMT+07:00" name="setUp" finished-at="2025-05-05T14:22:36 GMT+07:00" duration-ms="986" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="loginBeforeEachTest()[pri:0, instance:com.may.demo.MakeReservationTest@6f2cfcc2]" started-at="2025-04-26T15:25:27 GMT+07:00" name="loginBeforeEachTest" finished-at="2025-04-26T15:25:36 GMT+07:00" duration-ms="8667" status="PASS">
+        <test-method is-config="true" signature="loginBeforeEachTest()[pri:0, instance:com.may.demo.MakeReservationTest@7d42c224]" started-at="2025-05-05T14:22:36 GMT+07:00" name="loginBeforeEachTest" finished-at="2025-05-05T14:22:45 GMT+07:00" duration-ms="9329" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginBeforeEachTest -->
-        <test-method signature="testMakeReservationSuccessfully()[pri:0, instance:com.may.demo.MakeReservationTest@6f2cfcc2]" started-at="2025-04-26T15:25:36 GMT+07:00" name="testMakeReservationSuccessfully" finished-at="2025-04-26T15:25:39 GMT+07:00" duration-ms="3066" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <label data-v-5d01699a="">...</label> is not clickable at point (946, 658). Other element would receive the click: <ul data-v-5d01699a="">...</ul>
-  (Session info: chrome=135.0.7049.115)
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [98f58bb66046f78fb2b1674979b9782d, clickElement {id=f.2DBD7D5FC4607EDEDC8F864D3FDC54B6.d.EA14755BE99D5EFE6493832B2925DC88.e.213}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55542}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55542/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (98f58bb66046f78fb2b1674979b9782d)] -> xpath: //div[contains(@class,'time-box-list')]//label]
-Session ID: 98f58bb66046f78fb2b1674979b9782d]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <label data-v-5d01699a="">...</label> is not clickable at point (946, 658). Other element would receive the click: <ul data-v-5d01699a="">...</ul>
-  (Session info: chrome=135.0.7049.115)
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [98f58bb66046f78fb2b1674979b9782d, clickElement {id=f.2DBD7D5FC4607EDEDC8F864D3FDC54B6.d.EA14755BE99D5EFE6493832B2925DC88.e.213}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55542}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55542/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (98f58bb66046f78fb2b1674979b9782d)] -> xpath: //div[contains(@class,'time-box-list')]//label]
-Session ID: 98f58bb66046f78fb2b1674979b9782d
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at com.may.demo.MakeReservationTest.testMakeReservationSuccessfully(MakeReservationTest.java:191)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:169)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:88)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+        <test-method signature="testMakeReservationSuccessfully()[pri:0, instance:com.may.demo.MakeReservationTest@7d42c224]" started-at="2025-05-05T14:22:45 GMT+07:00" name="testMakeReservationSuccessfully" finished-at="2025-05-05T14:22:53 GMT+07:00" duration-ms="8399" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMakeReservationSuccessfully -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.may.demo.MakeReservationTest@6f2cfcc2]" started-at="2025-04-26T15:25:39 GMT+07:00" name="tearDown" finished-at="2025-04-26T15:25:39 GMT+07:00" duration-ms="225" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.may.demo.MakeReservationTest@7d42c224]" started-at="2025-05-05T14:22:53 GMT+07:00" name="tearDown" finished-at="2025-05-05T14:22:54 GMT+07:00" duration-ms="251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.may.demo.MakeReservationTest -->
+      <class name="com.may.demo.MedicalFlowTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.may.demo.MedicalFlowTest@56aaaecd]" started-at="2025-05-05T14:22:54 GMT+07:00" name="setUp" finished-at="2025-05-05T14:22:55 GMT+07:00" duration-ms="1139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="loginBeforeEachTest()[pri:0, instance:com.may.demo.MedicalFlowTest@56aaaecd]" started-at="2025-05-05T14:22:55 GMT+07:00" name="loginBeforeEachTest" finished-at="2025-05-05T14:23:01 GMT+07:00" duration-ms="5764" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginBeforeEachTest -->
+        <test-method signature="clickOnPatientNamedMinauto()[pri:0, instance:com.may.demo.MedicalFlowTest@56aaaecd]" started-at="2025-05-05T14:23:01 GMT+07:00" name="clickOnPatientNamedMinauto" finished-at="2025-05-05T14:23:12 GMT+07:00" duration-ms="11019" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnPatientNamedMinauto -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.may.demo.MedicalFlowTest@56aaaecd]" started-at="2025-05-05T14:23:12 GMT+07:00" name="tearDown" finished-at="2025-05-05T14:23:12 GMT+07:00" duration-ms="224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.may.demo.MedicalFlowTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

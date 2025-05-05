@@ -19,24 +19,24 @@ public class LoginTest {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    // Khai báo biến username và password
+    // Declare username and password variables
     private String validUsername;
     private String validPassword;
 
     @BeforeClass
     public void setUp() {
-        WebDriverManager.chromedriver().setup(); // Tự động lo vụ tải + setup
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Khởi tạo WebDriverWait ở đây
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Create WebDriverWait
 
-        // Gán giá trị mặc định cho validUsername và validPassword
-        validUsername = "mobidoc"; // Đặt username mặc định của bạn
-        validPassword = "1q2w3e4r!!"; // Đặt password mặc định của bạn
+        // Assign default values ​​to validUsername and validPassword
+        validUsername = "mobidoc";
+        validPassword = "1q2w3e4r!!";
     }
 
     @BeforeMethod
     public void navigateToLoginPage() {
-        driver.get("https://doctor-stag.mobidoc.at/login");
+        driver.get("https://doctor.mobidoc.at/login");
     }
 
     @AfterClass
@@ -46,23 +46,23 @@ public class LoginTest {
         }
     }
 
-    // ✨ Hàm dùng chung để login với thao tác gõ ký tự và log quá trình
+    // ✨ Common function for login with character typing and process logging
     private void login(String username, String password) {
         WebElement usernameField = wait
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id("___BVN__ID__v-3__input___")));
         WebElement passwordField = wait
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id("___BVN__ID__v-4__input___")));
 
-        // Đảm bảo các trường nhập được làm sạch trước khi điền
+        // Make sure input fields are cleaned before filling.
         usernameField.clear();
         passwordField.clear();
 
-        // Log các ký tự gõ vào username
+        // Log characters typed in username
         System.out.println("Đang gõ username: " + username);
         for (char c : username.toCharArray()) {
             usernameField.sendKeys(String.valueOf(c));
             try {
-                Thread.sleep(100); // Thời gian giữa các ký tự để dễ nhìn thấy thao tác gõ
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -73,7 +73,7 @@ public class LoginTest {
         for (char c : password.toCharArray()) {
             passwordField.sendKeys(String.valueOf(c));
             try {
-                Thread.sleep(100); // Thời gian giữa các ký tự để dễ nhìn thấy thao tác gõ
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -87,62 +87,62 @@ public class LoginTest {
 //✅ Case 1: Login successfully
     @Test(priority = 1)
     public void testValidLogin() throws InterruptedException {
-        login(validUsername, validPassword); // Sử dụng biến validUsername và validPassword
+        login(validUsername, validPassword); 
 
-        // ✅ Chờ trang chuyển hướng thành công
+        // ✅ Wait for page to redirect successfully
         wait.until(ExpectedConditions.urlContains("/patient/consult"));
 
-        // ✅ Optional: Chờ login button hiển thị và click được (phòng khi nút load chậm)
+        // ✅ Optional: Wait for the login button to appear and be clickable (in case the button loads slowly)
         WebElement loginButton = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("div.btn-content")));
         wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 
-        // ✅ Xác thực URL chính xác
+        // ✅ Check URL
         Assert.assertTrue(driver.getCurrentUrl().contains("/patient/consult"), "✅ Login successfully!");
-        Thread.sleep(100); // Delay 100ms
+        Thread.sleep(100);
 
     }
 //✅ Case 2: Login with wrong ID
     @Test(priority = 2)
     public void testInvalidUsername() throws InterruptedException {
-        // Gọi login với username sai
+        // Input wrong username
         login("ABCABC", validPassword);
 
-        // ✅ Chờ thông báo lỗi hiển thị
+        // ✅ Wait notify
         WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//*[contains(text(),'Please check your ID and password')]")));
 
-        // ✅ Xác thực rằng thông báo lỗi đang hiển thị
+        // ✅ Check wrong notify
         Assert.assertTrue(errorMessage.isDisplayed(), "❌ Wrong ID");
         Thread.sleep(100); 
     }
 // ✅ Case 3: Login with wrong Pass
     @Test(priority = 3)
     public void testInvalidPassword() throws InterruptedException {
-        // Gọi login với mật khẩu sai
-        login(validUsername, "wrongPass"); // Tự động nhập mật khẩu sai
+        // Input wrong Password
+        login(validUsername, "wrongPass"); // autofill wrong pass
 
-        // ✅ Chờ thông báo lỗi hiển thị
+        // ✅ Wait show notify
         WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//*[contains(text(),'Please check your ID and password')]")));
 
-        // ✅ Xác thực rằng thông báo lỗi đang hiển thị
+        // ✅ Check show wrong notify
         Assert.assertTrue(errorMessage.isDisplayed(), "❌ Wrong Password");
         Thread.sleep(100);
     }
 //✅ Case 4:No fill ID
     @Test
     public void testEmptyUsername() throws InterruptedException {
-        // ✅ Chờ trường mật khẩu hiển thị và nhập mật khẩu vào
+        // ✅ Wait for the password field to appear and enter the password.
         WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("___BVN__ID__v-4__input___")));
-        passwordField.sendKeys(validPassword); // Tự động điền mật khẩu
+        passwordField.sendKeys(validPassword);
 
-        // ✅ Chờ nút Đăng nhập hiển thị
+        // ✅ Wait change state of Login button
         WebElement loginButton = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("button.btn-custom-blue")));
 
-        // ✅ Kiểm tra nếu nút Đăng nhập có class "disabled" và thuộc tính "disabled"
+        // ✅ Check if Login button has class "disabled" and attribute "disabled"
         boolean isLoginButtonDisabled = loginButton.getAttribute("disabled") != null ||
                 loginButton.getAttribute("class").contains("disabled");
         Assert.assertTrue(isLoginButtonDisabled, "❌ No fill ID");
@@ -155,11 +155,11 @@ public class LoginTest {
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id("___BVN__ID__v-3__input___")));
         usernameField.sendKeys(validUsername);
 
-        // ✅ Chờ nút Đăng nhập hiển thị
+        // ✅ Wait show login button
         WebElement loginButton = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("button.btn-custom-blue")));
 
-        // ✅ Kiểm tra nếu nút Đăng nhập bị vô hiệu hóa (disabled)
+        // ✅ Check if the Login button is disabled
         boolean isLoginButtonDisabled = loginButton.getAttribute("disabled") != null ||
                 loginButton.getAttribute("class").contains("disabled");
         Assert.assertTrue(isLoginButtonDisabled, "❌ No fill password");
@@ -168,14 +168,14 @@ public class LoginTest {
 //✅ Case 6: NonExistentUser
     @Test(priority = 6)
     public void testNonExistentUser() throws InterruptedException {
-        // Gọi login với username không tồn tại
-        login("nonExistentUser", validPassword); // Tự động nhập mật khẩu
+        // Login with username that does not exist
+        login("nonExistentUser", validPassword);
 
-        // ✅ Chờ thông báo lỗi hiển thị
+        // ✅ Wait error notify
         WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//*[contains(text(),'Please check your ID and password')]")));
 
-        // ✅ Xác thực rằng thông báo lỗi đang hiển thị
+        // ✅ Check show notify
         Assert.assertTrue(errorMessage.isDisplayed(), "❌ NonExistentUser");
         Thread.sleep(100);
     }
@@ -184,28 +184,28 @@ public class LoginTest {
     public void testViewPasswordToggle() throws InterruptedException {
         String testPassword = "Testviewpass";
 
-        // ✅ Load lại trang login để đảm bảo sạch sẽ
-        driver.get("https://doctor-stag.mobidoc.at/login");
+        // ✅ Reload page login
+        driver.get("https://doctor.mobidoc.at/login");
 
-        // ✅ Điền username
+        // ✅ Input username
         WebElement usernameField = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("input[type='text']")));
         usernameField.clear();
         usernameField.sendKeys("mobidocA");
 
-        // ✅ Điền password
+        // ✅ Input password
         WebElement passwordField = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("input[type='password']")));
         passwordField.clear();
         passwordField.sendKeys(testPassword);
         Thread.sleep(3000);
 
-        // ✅ Click nút "View password"
+        // ✅ Click "View password" button
         WebElement viewPasswordCheckbox = wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.id("pwLook")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", viewPasswordCheckbox);
 
-        // ✅ Chờ input password chuyển thành type='text' và có giá trị đúng
+        // ✅ Wait input password change to type='text' and have right value
         WebElement revealedField = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(driver -> {
                     List<WebElement> inputs = driver.findElements(By.cssSelector("input[type='text']"));
@@ -216,7 +216,7 @@ public class LoginTest {
                     }
                     return null;
                 });
-        // ✅ Kiểm tra kết quả
+        // ✅ Check show result
         Assert.assertEquals(revealedField.getAttribute("value"), testPassword,
                 "❌ Mật khẩu không khớp – Test FAIL!");
         Thread.sleep(1000);
@@ -227,18 +227,18 @@ public class LoginTest {
      */
     @Test(priority = 8)
     public void testSaveLoginInformation() throws InterruptedException {
-        login(validUsername, validPassword); // Sử dụng biến validUsername và validPassword
+        login(validUsername, validPassword);
 
-        // ✅ Chờ trang chuyển hướng thành công
+        // ✅ Wait for reload true page
         wait.until(ExpectedConditions.urlContains("/patient/consult"));
 
-        // Chờ trang chuyển tới dashboard sau khi đăng nhập
+        // Wait for the page to redirect to dashboard after login
         wait.until(ExpectedConditions.urlContains("/patient/consult"));
 
-        // Kiểm tra trang đã chuyển tới đúng
+        // Check the page is redirected correctly
         Assert.assertTrue(driver.getCurrentUrl().contains("/patient/consult"), "❌ Đăng nhập thành công.");
 
-        // Tìm và đảm bảo biểu tượng Mobicon SVG hiển thị trước khi click vào
+        // Find and make sure the Mobicon SVG icon is visible before clicking on it.
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//button[contains(@class, 'btn-more')]")));
         Thread.sleep(1000);
@@ -247,18 +247,18 @@ public class LoginTest {
         Thread.sleep(1000);
         button.click();
 
-        // 👉 Chờ menu hoặc panel chứa các tùy chọn hiển thị ra
+        // 👉 Wait show menu
         wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//div[contains(@class, 'menu') or contains(@class, 'dropdown') or contains(., 'Log out')]")));
 
-        // Tìm và click vào nút 'Log out'
+        // Click 'Log out'
         WebElement logoutButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//p[contains(@class, 'logout-button') and contains(., 'Log out')]")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", logoutButton);
         Thread.sleep(1000);
         logoutButton.click();
 
-        // Chờ chuyển hướng lại trang login
+        // Wait for reload login page
         wait.until(ExpectedConditions.urlContains("login"));
         Thread.sleep(1000);
     }

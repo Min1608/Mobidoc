@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
-              <span class="suite-name border-failed">Surefire suite</span>
+              <span class="suite-name border-passed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods, 1 failed,   8 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
-                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Surefire_suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.may.demo.MakeReservationTest" class="method navigator-link" hash-for-method="testMakeReservationSuccessfully">testMakeReservationSuccessfully</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Surefire_suite -->
+                    <span class="method-stats">10 methods,   10 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,6 +101,11 @@
                       <a href="#" panel-name="suite-Surefire_suite" class="show-methods passed suite-Surefire_suite"> (show)</a> <!-- show-methods passed suite-Surefire_suite -->
                     </span>
                     <div class="method-list-content passed suite-Surefire_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.may.demo.MedicalFlowTest" class="method navigator-link" hash-for-method="clickOnPatientNamedMinauto">clickOnPatientNamedMinauto</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="com.may.demo.LoginTest" class="method navigator-link" hash-for-method="testEmptyPassword">testEmptyPassword</a> <!-- method navigator-link -->
@@ -133,6 +124,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="com.may.demo.LoginTest" class="method navigator-link" hash-for-method="testInvalidUsername">testInvalidUsername</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.may.demo.MakeReservationTest" class="method navigator-link" hash-for-method="testMakeReservationSuccessfully">testMakeReservationSuccessfully</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -167,43 +163,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
-          <div class="suite-Surefire_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.may.demo.MakeReservationTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testMakeReservationSuccessfully">
-                  </a> <!-- testMakeReservationSuccessfully -->
-                  <span class="method-name">testMakeReservationSuccessfully</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;label data-v-5d01699a=&quot;&quot;&gt;...&lt;/label&gt; is not clickable at point (946, 658). Other element would receive the click: &lt;ul data-v-5d01699a=&quot;&quot;&gt;...&lt;/ul&gt;
-  (Session info: chrome=135.0.7049.115)
-Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;24.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [98f58bb66046f78fb2b1674979b9782d, clickElement {id=f.2DBD7D5FC4607EDEDC8F864D3FDC54B6.d.EA14755BE99D5EFE6493832B2925DC88.e.213}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.115, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55542}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55542/devtoo..., se:cdpVersion: 135.0.7049.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (98f58bb66046f78fb2b1674979b9782d)] -&gt; xpath: //div[contains(@class,&apos;time-box-list&apos;)]//label]
-Session ID: 98f58bb66046f78fb2b1674979b9782d
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at com.may.demo.MakeReservationTest.testMakeReservationSuccessfully(MakeReservationTest.java:191)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-... Removed 33 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-failed -->
           <div class="suite-Surefire_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -268,6 +227,36 @@ Session ID: 98f58bb66046f78fb2b1674979b9782d
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.may.demo.MedicalFlowTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickOnPatientNamedMinauto">
+                  </a> <!-- clickOnPatientNamedMinauto -->
+                  <span class="method-name">clickOnPatientNamedMinauto</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.may.demo.MakeReservationTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMakeReservationSuccessfully">
+                  </a> <!-- testMakeReservationSuccessfully -->
+                  <span class="method-name">testMakeReservationSuccessfully</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
         </div> <!-- panel Surefire_suite -->
         <div panel-name="test-xml-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -281,6 +270,7 @@ Session ID: 98f58bb66046f78fb2b1674979b9782d
     &lt;classes&gt;
       &lt;class name=&quot;com.may.demo.LoginTest&quot;/&gt;
       &lt;class name=&quot;com.may.demo.MakeReservationTest&quot;/&gt;
+      &lt;class name=&quot;com.may.demo.MedicalFlowTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Surefire test --&gt;
 &lt;/suite&gt; &lt;!-- Surefire suite --&gt;
@@ -294,7 +284,7 @@ Session ID: 98f58bb66046f78fb2b1674979b9782d
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Surefire test (2 classes)</span>
+                <span class="test-name">Surefire test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -320,48 +310,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(10);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testSaveLoginInformation')
-data.setCell(0, 2, 'com.may.demo.LoginTest')
-data.setCell(0, 3, 7333);
+data.setCell(0, 1, 'clickOnPatientNamedMinauto')
+data.setCell(0, 2, 'com.may.demo.MedicalFlowTest')
+data.setCell(0, 3, 11019);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testViewPasswordToggle')
+data.setCell(1, 1, 'testSaveLoginInformation')
 data.setCell(1, 2, 'com.may.demo.LoginTest')
-data.setCell(1, 3, 5171);
+data.setCell(1, 3, 9021);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testNonExistentUser')
-data.setCell(2, 2, 'com.may.demo.LoginTest')
-data.setCell(2, 3, 4448);
+data.setCell(2, 1, 'testMakeReservationSuccessfully')
+data.setCell(2, 2, 'com.may.demo.MakeReservationTest')
+data.setCell(2, 3, 8399);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testValidLogin')
+data.setCell(3, 1, 'testNonExistentUser')
 data.setCell(3, 2, 'com.may.demo.LoginTest')
-data.setCell(3, 3, 3943);
+data.setCell(3, 3, 5853);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testInvalidUsername')
+data.setCell(4, 1, 'testViewPasswordToggle')
 data.setCell(4, 2, 'com.may.demo.LoginTest')
-data.setCell(4, 3, 3776);
+data.setCell(4, 3, 5220);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testInvalidPassword')
+data.setCell(5, 1, 'testValidLogin')
 data.setCell(5, 2, 'com.may.demo.LoginTest')
-data.setCell(5, 3, 3745);
+data.setCell(5, 3, 5090);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testMakeReservationSuccessfully')
-data.setCell(6, 2, 'com.may.demo.MakeReservationTest')
-data.setCell(6, 3, 3066);
+data.setCell(6, 1, 'testInvalidUsername')
+data.setCell(6, 2, 'com.may.demo.LoginTest')
+data.setCell(6, 3, 4147);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testEmptyPassword')
+data.setCell(7, 1, 'testInvalidPassword')
 data.setCell(7, 2, 'com.may.demo.LoginTest')
-data.setCell(7, 3, 265);
+data.setCell(7, 3, 3837);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testEmptyUsername')
+data.setCell(8, 1, 'testEmptyPassword')
 data.setCell(8, 2, 'com.may.demo.LoginTest')
-data.setCell(8, 3, 188);
+data.setCell(8, 3, 379);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testEmptyUsername')
+data.setCell(9, 2, 'com.may.demo.LoginTest')
+data.setCell(9, 3, 251);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 53 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -394,92 +388,109 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">2490 ms</span>
+                <span class="method-start">3639 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testEmptyPassword</span>
-                <span class="method-start">5702 ms</span>
+                <span class="method-start">6193 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">5973 ms</span>
+                <span class="method-start">6577 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testEmptyUsername</span>
-                <span class="method-start">6593 ms</span>
+                <span class="method-start">7306 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">6783 ms</span>
+                <span class="method-start">7558 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testValidLogin</span>
-                <span class="method-start">7254 ms</span>
+                <span class="method-start">8226 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">11199 ms</span>
+                <span class="method-start">13318 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testInvalidUsername</span>
-                <span class="method-start">12079 ms</span>
+                <span class="method-start">14351 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">15856 ms</span>
+                <span class="method-start">18499 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testInvalidPassword</span>
-                <span class="method-start">16329 ms</span>
+                <span class="method-start">19202 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">20076 ms</span>
+                <span class="method-start">23040 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testNonExistentUser</span>
-                <span class="method-start">20478 ms</span>
+                <span class="method-start">23966 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">24927 ms</span>
+                <span class="method-start">29821 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testViewPasswordToggle</span>
-                <span class="method-start">25351 ms</span>
+                <span class="method-start">30573 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">navigateToLoginPage</span>
-                <span class="method-start">30524 ms</span>
+                <span class="method-start">35794 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSaveLoginInformation</span>
-                <span class="method-start">31400 ms</span>
+                <span class="method-start">36966 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">38735 ms</span>
+                <span class="method-start">45988 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.may.demo.MakeReservationTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">38936 ms</span>
+                <span class="method-start">46264 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">loginBeforeEachTest</span>
-                <span class="method-start">39712 ms</span>
+                <span class="method-start">47250 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testMakeReservationSuccessfully</span>
-                <span class="method-start">48379 ms</span>
+                <span class="method-start">56579 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">51458 ms</span>
+                <span class="method-start">64978 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.may.demo.MedicalFlowTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">65230 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">loginBeforeEachTest</span>
+                <span class="method-start">66370 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">clickOnPatientNamedMinauto</span>
+                <span class="method-start">72134 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">83154 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
