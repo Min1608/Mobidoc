@@ -98,6 +98,8 @@ public class MedicalFlowTest {
     /**
      * @throws InterruptedException
      */
+    
+//FORM DOCTOR MAKE RESERVATION
 
 // Case1 : Check Confirm reservation
     @Test
@@ -130,9 +132,9 @@ public class MedicalFlowTest {
                     By.xpath("//button[contains(@class, 'btn-custom-blue')]//div[text()='Confirm arrival']")));
             confirmArrivalButton.click();
 
-            // 2. Lấy đúng thẻ <button> chứa Confirm arrival từ popup đầu tiên
+            // Get the correct <button> tag containing Confirm arrival from the first popup
             System.out.println("Đang tìm popupConfirmButton.");
-            // 2. Lấy tất cả các thẻ <button> chứa "Confirm arrival"
+            // Get all <button> tags containing "Confirm arrival"
 
             try {
                 WebElement exactConfirmButton = wait.until(ExpectedConditions.elementToBeClickable(
@@ -145,13 +147,16 @@ public class MedicalFlowTest {
                 System.out.println("❌ Timeout: Không tìm thấy nút với class chính xác 'btn btn-md btn-custom-blue'.");
 
             }
-            // 4. Đợi popup đóng sau khi click
+
+            // Wait close popup after click
             wait.until(ExpectedConditions.invisibilityOfElementLocated(
                     By.xpath(
                             "//div[contains(@class, 'modal') and contains(@class, 'fade') and contains(@class, 'show')]")));
-            // 5. Đảm bảo tiêu đề cảnh báo cũng biến mất
+
+
             wait.until(ExpectedConditions.invisibilityOfElementLocated(
                     By.xpath("//p[contains(@class, 'alert-title') and contains(text(), 'Patient arrived?')]")));
+
         } catch (org.openqa.selenium.TimeoutException te) {
             System.err.println("❌ Timeout: Không tìm thấy phần tử trong thời gian chờ.");
         } catch (Exception e) {
@@ -160,6 +165,7 @@ public class MedicalFlowTest {
         }
         sleep(3000);
         // }
+
 // //Case2 : Check Consultation Reservation
         {// @Test(priority = 2)
          // public void consultationReservation() {
@@ -168,7 +174,7 @@ public class MedicalFlowTest {
                     By.xpath("//ul[contains(@class, 'tabs-wrap')]//span[contains(text(), 'Consultation')]")));
             ConsultationTab.click();
 
-            // Tìm tất cả các element chứa tên bệnh nhân Minauto
+            // Find all elements containing patient name
             List<WebElement> minaPatients = wait.until(
                     ExpectedConditions.visibilityOfAllElementsLocatedBy(
                             By.xpath(
@@ -176,34 +182,34 @@ public class MedicalFlowTest {
 
             Assert.assertFalse(minaPatients.isEmpty(), "❌ Không tìm thấy bệnh nhân tên Minauto.");
 
-            // Click vào dòng chứa bệnh nhân Minauto cuối cùng (trong trường hợp có nhiều
-            // dòng)
+            // Click on the row containing the last Minauto patient (in case there are multiple rows)
             WebElement lastMina = minaPatients.get(minaPatients.size() - 1);
             WebElement headerClickable = lastMina.findElement(By.xpath("./ancestor::div[contains(@class, 'bt-line')]"));
             headerClickable.click();
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-            // 1. Đợi popup với tiêu đề "Patient information" hiển thị
+            // Wait open Patient information popup
             WebElement popup = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.xpath("//div[contains(@class, 'modal-content')]//p[contains(text(), 'Patient information')]")));
 
-            // 2. Đợi và click nút "Accept" trong popup
+            // Wait and click Accept button
             WebElement acceptButton = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[contains(@class, 'modal-content')]//button[.//div[text()='Accept']]")));
             acceptButton.click();
 
-            // 3. Đợi popup đóng (invisible)
+            // Wait close popup (invisible)
             wait.until(ExpectedConditions.invisibilityOfElementLocated(
                     By.xpath("//div[contains(@class, 'modal-content')]")));
 
-            // 4. Đợi và lấy thông báo hiển thị sau khi accept (ví dụ alert success)
+            // Wait and get the notification displayed after accept (e.g. alert success)
             WebElement alertMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.cssSelector(".alert, .toast, .notification")));
 
             System.out.println("Thông báo hiển thị: " + alertMessage.getText());
             sleep(3000);
         }
+
         // }
 
 // //Case3 : Check Dr's Diagnosis 8 Reservation
@@ -238,13 +244,18 @@ public class MedicalFlowTest {
             // Đợi popup đóng (invisible)
             wait.until(ExpectedConditions.invisibilityOfElementLocated(
                     By.xpath("//div[contains(@class, 'modal-content')]")));
-            sleep(3000);
+            sleep(1000);
             // Click Completed Tab
             WebElement CompletedTab = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//ul[contains(@class, 'tabs-wrap')]//span[contains(text(), 'Completed')]")));
             CompletedTab.click();
-            sleep(3000);
+            sleep(2000);
         }
     }
+
+
+
+    
+//FORM PATIENT MAKE RESERVATION
 
 }
