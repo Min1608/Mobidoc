@@ -56,11 +56,9 @@ public class PatientRegistrationTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
         validUsername = "mobidoc";
         validPassword = "1q2w3e4r!!";
         validName = "MinPatientRe";
-        // validPhone = "0908-776-3349";
         validGender = "Female";
         validBirth = "08/16/2000";
         validEmail = "minhthu1608@dudaji.vn";
@@ -69,7 +67,6 @@ public class PatientRegistrationTest {
         validEmName = "MinSister";
         validEmPhone = "0908-776-4449";
         validRelation = "Sister";
-
     }
 
     @BeforeMethod
@@ -95,7 +92,6 @@ public class PatientRegistrationTest {
             passwordField.sendKeys(String.valueOf(c));
             sleep(100);
         }
-
         // Click login
         WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[contains(@class, 'btn-content') and text()='Log in']")));
@@ -144,7 +140,6 @@ public class PatientRegistrationTest {
             driver.quit();
         }
     }
-
     public static String generateRandomPhone() {
         Random rand = new Random();
         int part1 = rand.nextInt(90) + 10;       // 10–99
@@ -152,7 +147,6 @@ public class PatientRegistrationTest {
         int part3 = rand.nextInt(9000) + 1000;   // 1000–9999
         return String.format("09%d-%03d-%04d", part1, part2, part3);
     }
-
     private int getAndIncrementCounter(String filename) {
         Path path = Paths.get(filename);
         int current = 1;
@@ -164,12 +158,11 @@ public class PatientRegistrationTest {
                     current = Integer.parseInt(content);
                 }
             }
-            // Ghi lại giá trị đã tăng
+            // Record the increased value
             Files.writeString(path, String.valueOf(current + 1), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
-        }
-    
+        }   
         return current;
     }
 
@@ -180,20 +173,19 @@ public class PatientRegistrationTest {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // // Input patient information
-        // Tạo số điện thoại random theo format 09XX-XXX-XXXX
+        // Create Phone number random by format 09XX-XXX-XXXX
         String randomPhone = generateRandomPhone();
 
-        // Nhập số vào input
+        // Input random phone number
         WebElement phoneInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("input[id^='__BVID__'][placeholder='Phone number']")));
         phoneInput.sendKeys(randomPhone);
 
-        // Chờ nút Next có thể click được (loại bỏ trạng thái 'disabled')
+        // Wait button Next enable
         WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement nextButton = wait2.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("button.btn.btn-lg.btn-primary-fill.flex-grow-1:not(.disabled)")));
         nextButton.click();
-        // Chờ chút xem có hiện gì không
         Thread.sleep(1000);
         System.out.println(driver.getPageSource());
 
@@ -208,7 +200,7 @@ public class PatientRegistrationTest {
 //         By.cssSelector("input.form-control[type='text']")));
 // nameInput.sendKeys(validName);
 
-        // Chờ nút Next có thể click được (loại bỏ trạng thái 'disabled')
+        // Wait and click Next button
         WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement next2Button = wait3.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("button.btn.btn-x-lg.btn-primary-fill.flex-grow-1:not(.disabled)")));
@@ -218,7 +210,7 @@ public class PatientRegistrationTest {
                 By.cssSelector("input.form-control[type='date']")));
         birthInput.sendKeys(validBirth);
 
-        // Tìm thẻ select và chọn giới tính tương ứng
+        // Find class select and choose gender
         WebElement genderSelectElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("select.form-select.code-select-box")));
 
@@ -229,41 +221,36 @@ public class PatientRegistrationTest {
         } else {
             genderSelect.selectByValue("M");
         }
-
-        // Chờ nút "Next" xuất hiện và có thể click được
+        // Wait show and click Next button
         WebElement next33Button = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("button.btn.btn-x-lg.btn-primary-fill.flex-grow-1")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", next33Button);
         Thread.sleep(1000);
 
-        // Chờ nút "Find address" xuất hiện và có thể click được
+        // Wait and click Find address button
         WebElement findAddressButton = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("button.btn.btn-lg.btn-primary-fill.w-100")));
-
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", findAddressButton);
         Thread.sleep(1000);
 
-
-        // Tìm ô input địa chỉ và nhập "hcm"
+        // Find input bar and type "hcm"
         WebElement addressInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("input#autocomplete.autocomplete-input")));
         addressInput.sendKeys("hcm");
 
-        // Chờ gợi ý hiển thị (class phổ biến của Google Places: .pac-item)
+        // Wait show dropdown list (class basic of Google Places: .pac-item)
         WebElement firstSuggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector(".pac-item")));
         firstSuggestion.click();
         Thread.sleep(1000);
 
-        // Chờ nút Confirm hiển thị và có thể click được
+        // Wait and click button Confirm
         WebElement confirmButton = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("button.btn.btn-x-lg.btn-custom-blue")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", confirmButton);
-
-        // Tạm dừng nếu cần theo dõi thao tác tiếp theo
         Thread.sleep(1000);
 
-        // Chờ nút "Register a new patient" hiển thị và có thể click được
+        // Wait and click "Register a new patient" button
         WebElement registerNewPatientButton = wait.until(ExpectedConditions.elementToBeClickable(
             By.cssSelector("button.btn.btn-x-lg.btn-primary-fill.flex-grow-1")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", registerNewPatientButton);
@@ -277,17 +264,17 @@ public class PatientRegistrationTest {
 
         WebDriverWait wait6 = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // Chờ field textarea sẵn sàng và nhập nội dung
+        // Wait for the textarea field to be ready and enter content
         WebElement noteTextarea = wait6.until(ExpectedConditions.elementToBeClickable(
             By.cssSelector("textarea.form-control[maxlength='200']")));
         noteTextarea.clear();
         noteTextarea.sendKeys("Min check automation");
 
-        // Lấy danh sách tất cả textarea có maxlength = 200
+        // Get a list of all textareas with maxlength = 200
         List<WebElement> textareas = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
             By.cssSelector("textarea.form-control[maxlength='200']")));
 
-        // Nhập vào textarea thứ 2
+        // Enter the second textarea
         if (textareas.size() >= 2) {
             WebElement secondTextarea = textareas.get(1);
             secondTextarea.clear();
@@ -296,21 +283,18 @@ public class PatientRegistrationTest {
             throw new RuntimeException("Không tìm thấy textarea thứ 2 để nhập nội dung.");
         }
         Thread.sleep(1000);
-
-
         WebDriverWait wait7 = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-        // Lấy tất cả label có chữ "Yes"
+        // Get all labels with the word "Yes"
         List<WebElement> yesLabels = wait7.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
             By.xpath("//label[.//span[contains(text(), 'Yes')]]")
         ));
 
-        // Click từng label
+        // Click each label
         for (WebElement label : yesLabels) {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", label);
-            Thread.sleep(500); // Cho mượt
+            Thread.sleep(500);
             label.click();
-            Thread.sleep(500); // Tránh double click nhanh
+            Thread.sleep(500);
         }
 
         WebElement next5Button = wait.until(ExpectedConditions.elementToBeClickable(
@@ -322,7 +306,7 @@ public class PatientRegistrationTest {
 
         WebDriverWait wait8 = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // Chờ và lấy ra label "Agree to all terms"
+        // Wait and get the label "Agree to all terms"
         WebElement checkboxDiv = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.form-check")));
 
@@ -336,16 +320,14 @@ public class PatientRegistrationTest {
             ));
         confirm1Button.click();
         Thread.sleep(2000);
-
-
-        // 2. Chờ màn hình "Submission completed!" hiển thị
+        // Wait for the "Submission completed!" screen to appear.
         boolean isSubmissionComplete = new WebDriverWait(driver, Duration.ofSeconds(15))
             .until(ExpectedConditions.textToBePresentInElementLocated(
                 By.xpath("//p[contains(text(), 'Submission completed!')]"),
                 "Submission completed!"
             ));
 
-        // 3. Đánh giá kết quả
+        // Evaluate results
         if (isSubmissionComplete) {
             System.out.println("✅ Test Case PASSED: Submission completed message appeared.");
         } else {

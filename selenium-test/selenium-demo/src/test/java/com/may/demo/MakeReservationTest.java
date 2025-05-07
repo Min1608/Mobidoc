@@ -163,7 +163,6 @@ public class MakeReservationTest {
         WebElement doctorOption = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("(//a[contains(@class,'nav-link') and contains(@class,'active')])[1]")));
         doctorOption.click();
-        System.out.println("CP2");
 
         Thread.sleep(500);
 
@@ -188,7 +187,7 @@ public class MakeReservationTest {
         System.out.println("Đã chọn khung giờ bất kỳ.");
         sleep(500);
 
-        // Click nút đặt lịch
+        // Click Make an appointment
         WebElement makeAppointmentBtn = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//div[contains(@class,'btn-content') and text()='Make an appointment']")));
         makeAppointmentBtn.click();
@@ -196,7 +195,7 @@ public class MakeReservationTest {
         sleep(1000);
 
         //Wait to Make reservation successfully
-        sleep(3000); // chờ phản hồi
+        sleep(3000); 
         System.out.println("Case: Make reservation successfully!");
     }
 

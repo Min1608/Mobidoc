@@ -164,11 +164,11 @@ public class MedicalFlowTest {
             e.printStackTrace();
         }
         sleep(3000);
-        // }
+//          }
 
-// //Case2 : Check Consultation Reservation
-        {// @Test(priority = 2)
-         // public void consultationReservation() {
+// // //Case2 : Check Consultation Reservation
+//          @Test
+//           public void consultationReservation() {
 
             WebElement ConsultationTab = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//ul[contains(@class, 'tabs-wrap')]//span[contains(text(), 'Consultation')]")));
@@ -182,10 +182,14 @@ public class MedicalFlowTest {
 
             Assert.assertFalse(minaPatients.isEmpty(), "❌ Không tìm thấy bệnh nhân tên Minauto.");
 
-            // Click on the row containing the last Minauto patient (in case there are multiple rows)
-            WebElement lastMina = minaPatients.get(minaPatients.size() - 1);
-            WebElement headerClickable = lastMina.findElement(By.xpath("./ancestor::div[contains(@class, 'bt-line')]"));
-            headerClickable.click();
+        WebElement lastMina = minaPatients.get(minaPatients.size() - 1);
+        WebElement headerClickable = lastMina.findElement(By.xpath("./ancestor::div[contains(@class, 'bt-line')]"));
+
+        // Scroll và click bằng JS để tránh lỗi bị chặn
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", headerClickable);
+        js.executeScript("arguments[0].click();", headerClickable);
+
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -208,7 +212,7 @@ public class MedicalFlowTest {
 
             System.out.println("Thông báo hiển thị: " + alertMessage.getText());
             sleep(3000);
-        }
+        
 
         // }
 
@@ -219,7 +223,7 @@ public class MedicalFlowTest {
                     By.xpath("//ul[contains(@class, 'tabs-wrap')]//span[contains(text(), 'Diagnosis')]")));
             diagnosisTab.click();
 
-            // Tìm tất cả các element chứa tên bệnh nhân Minauto
+            // Find all elements containing patient name Minauto
             List<WebElement> minaPatients2 = wait.until(
                     ExpectedConditions.visibilityOfAllElementsLocatedBy(
                             By.xpath(
@@ -227,10 +231,10 @@ public class MedicalFlowTest {
 
             Assert.assertFalse(minaPatients2.isEmpty(), "❌ Không tìm thấy bệnh nhân tên Minauto.");
 
-            // Lấy dòng cuối cùng chứa bệnh nhân Minauto
+            // Choose lastMina2
             WebElement lastMina2 = minaPatients2.get(minaPatients2.size() - 1);
 
-            // Tìm và click vào nút "Complete" trong dòng đó
+            // Find and click the "Complete" button in that line
             WebElement headerClickable2 = driver.findElement(By.xpath("//button//div[text()='Complete']"));
             headerClickable2.click();
 
@@ -241,7 +245,7 @@ public class MedicalFlowTest {
             endTreatmentButton.click();
             sleep(3000);
 
-            // Đợi popup đóng (invisible)
+            // Wait to close popup
             wait.until(ExpectedConditions.invisibilityOfElementLocated(
                     By.xpath("//div[contains(@class, 'modal-content')]")));
             sleep(1000);
@@ -253,9 +257,10 @@ public class MedicalFlowTest {
         }
     }
 
+ /**
+     * @throws InterruptedException
+     */  
 
-
-    
-//FORM PATIENT MAKE RESERVATION
+//FORM PATIENT REGISTRATION (DOCTOR)
 
 }
