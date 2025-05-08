@@ -73,6 +73,10 @@ public class MakeReservationTest {
         WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("___BVN__ID__v-4__input___")));
 
+            // 👉 Clear input fields trước khi nhập
+            usernameField.clear();
+            passwordField.clear();
+
         // Typing username
         for (char c : validUsername.toCharArray()) {
             usernameField.sendKeys(String.valueOf(c));
@@ -110,7 +114,7 @@ public class MakeReservationTest {
         for (String windowHandle : allWindowHandles) {
             if (!windowHandle.equals(currentWindowHandle)) {
                 driver.switchTo().window(windowHandle); //Move to new window
-                System.out.println("Đã chuyển sang cửa sổ mới.");
+                System.out.println("Moved to new window");
                 break;
             }
         }
@@ -184,7 +188,7 @@ public class MakeReservationTest {
         actions.moveToElement(randomSlot).click().perform();
 
 
-        System.out.println("Đã chọn khung giờ bất kỳ.");
+        System.out.println("Choosed random time");
         sleep(500);
 
         // Click Make an appointment

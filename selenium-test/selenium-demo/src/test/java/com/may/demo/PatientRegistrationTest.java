@@ -82,6 +82,10 @@ public class PatientRegistrationTest {
         WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("___BVN__ID__v-4__input___")));
 
+        // 👉 Clear input fields
+        usernameField.clear();
+        passwordField.clear();
+
         // Typing username
         for (char c : validUsername.toCharArray()) {
             usernameField.sendKeys(String.valueOf(c));
@@ -119,7 +123,7 @@ public class PatientRegistrationTest {
         for (String windowHandle : allWindowHandles) {
             if (!windowHandle.equals(currentWindowHandle)) {
                 driver.switchTo().window(windowHandle); // Move to new window
-                System.out.println("Đã chuyển sang cửa sổ mới.");
+                System.out.println("Moved to new window");
                 break;
             }
         }
@@ -193,8 +197,8 @@ public class PatientRegistrationTest {
                 By.cssSelector("input.form-control[type='text']")));
         nameInput.sendKeys(validName);
 
-// int counter = getAndIncrementCounter("name_counter.txt"); // dùng hàm có sẵn để lấy số tăng dần
-// String validName = "MinPaRe" + counter; // gắn số đó vào tên
+// int counter = getAndIncrementCounter("name_counter.txt");
+// String validName = "MinPaRe" + counter; // Fill number with name
         
 // WebElement nameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
 //         By.cssSelector("input.form-control[type='text']")));
@@ -280,7 +284,7 @@ public class PatientRegistrationTest {
             secondTextarea.clear();
             secondTextarea.sendKeys("Min check automation");
         } else {
-            throw new RuntimeException("Không tìm thấy textarea thứ 2 để nhập nội dung.");
+            throw new RuntimeException("Cannot found second textarea to input information");
         }
         Thread.sleep(1000);
         WebDriverWait wait7 = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -302,7 +306,7 @@ public class PatientRegistrationTest {
         );
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", next5Button);
-        Thread.sleep(1000); // Cho mượt sau khi click
+        Thread.sleep(1000);
 
         WebDriverWait wait8 = new WebDriverWait(driver, Duration.ofSeconds(10));
 

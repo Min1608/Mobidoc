@@ -58,7 +58,7 @@ public class LoginTest {
         passwordField.clear();
 
         // Log characters typed in username
-        System.out.println("Đang gõ username: " + username);
+        System.out.println("Typing username: " + username);
         for (char c : username.toCharArray()) {
             usernameField.sendKeys(String.valueOf(c));
             try {
@@ -68,8 +68,8 @@ public class LoginTest {
             }
         }
 
-        // Log các ký tự gõ vào password
-        System.out.println("Đang gõ password: " + password);
+        // Log typing characters
+        System.out.println("Typing password: " + password);
         for (char c : password.toCharArray()) {
             passwordField.sendKeys(String.valueOf(c));
             try {
