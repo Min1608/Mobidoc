@@ -337,6 +337,5 @@ public class PatientRegistrationTest {
         } else {
             System.out.println("❌ Test Case FAILED: No completion message.");
         }
-
             }
 }
