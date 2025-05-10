@@ -32,7 +32,9 @@ public class MedicalHistoryTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize(); // Mở toàn màn hình
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
 
         validUsername = "mobidoc";
         validPassword = "1q2w3e4r!!";
@@ -97,7 +99,7 @@ public class MedicalHistoryTest {
         }
     }
 
-    // Test case: Test edit information of Medical History
+// Test case: Test edit information of Medical History
 
     /**
      * @throws TimeoutException
@@ -106,14 +108,13 @@ public class MedicalHistoryTest {
     public void editMedicalHistory() throws TimeoutException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
+         
         // Bước 1: Chờ cho phần tử trở nên có thể nhấp và click vào nút
         WebElement button = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector(
                         "#app > div > div.wrapper > div > div:nth-child(2) > div > main > div.list-content-wrap > div > div > div > div.patient-info > div.btn-wrap.icon-btn-wrap > div.badge-btn.record-btn")));
         button.click();
-
-        // Bước 2: Chờ một chút để trang load ổn định
-        sleep(3000); // Hoặc có thể thay bằng một wait condition nếu cần
+        sleep(3000); 
 
         // Tìm phần tử cha có class 'reserve-list reserve-tab'
         WebElement container = driver.findElement(By.cssSelector(".reserve-list.reserve-tab"));
@@ -165,8 +166,7 @@ public class MedicalHistoryTest {
                 "/html/body/div[1]/div/div[1]/div/div[2]/div/div[17]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div[14]/div/div/div[3]/div/div/button[2]")));
         saveButton.click();
 
-        // Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu
-        // thành công
+        // Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu thành công
         wait.until(ExpectedConditions.invisibilityOf(saveButton));
 
         // Click vào nút thứ 2 trong danh sách
@@ -195,8 +195,7 @@ public class MedicalHistoryTest {
                 "/html/body/div[1]/div/div[1]/div/div[2]/div/div[17]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div[14]/div/div/div[3]/div/div/button[2]")));
         saveButton.click();
 
-        // Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu
-        // thành công
+        // Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu thành công
         wait.until(ExpectedConditions.invisibilityOf(saveButton1));
         sleep(3000);
 
@@ -226,62 +225,81 @@ public class MedicalHistoryTest {
                 "/html/body/div[1]/div/div[1]/div/div[2]/div/div[17]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div[14]/div/div/div[3]/div/div/button[2]")));
         saveButton.click();
 
-        // Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu
-        // thành công
+        // Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu thành công
         wait.until(ExpectedConditions.invisibilityOf(saveButton2));
         sleep(3000);
 
+        // Click vào nút thứ 4
+        if (iconBoxes.size() >= 5) {
+            iconBoxes.get(4).click();
+        } else {
+            System.out.println("Ít hơn 4 nút, không click được nút thứ 4.");
+        }
+        sleep(3000);
 
-// Click vào nút thứ 4
-if (iconBoxes.size() >= 5) {
-    iconBoxes.get(4).click();
+        // Tìm textarea bằng XPath mới
+        WebElement textarea3 = driver.findElement(By.xpath(
+                "/html/body/div[1]/div/div[1]/div/div[2]/div/div[17]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div[14]/div/div/div[2]/div/div/div/div/textarea"));
+
+        // Click cho nó focus
+        textarea3.click();
+
+        // Xóa nội dung cũ (nếu có)
+        textarea3.clear();
+
+        // Nhập nội dung mới
+        textarea3.sendKeys("Dữ liệu muốn nhập");
+
+        // Bước 6: Chờ và click vào nút Save
+        WebElement saveButton3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+                "/html/body/div[1]/div/div[1]/div/div[2]/div/div[17]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div[14]/div/div/div[3]/div/div/button[2]")));
+        saveButton.click();
+
+        // Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu thành công
+        wait.until(ExpectedConditions.invisibilityOf(saveButton3));
+        sleep(3000);
+
+        // Click vào nút thứ 6
+        if (iconBoxes.size() >= 6) {
+            iconBoxes.get(5).click();
+        } else {
+            System.out.println("Ít hơn 4 nút, không click được nút thứ 6.");
+        }
+        sleep(3000);
+
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+// Scroll và tương tác an toàn với textarea
+WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+// Chờ cho đến khi phần tử có thể tương tác và có thể nhập liệu
+WebElement element = wait.until(ExpectedConditions.elementToBeClickable(
+    By.cssSelector("#modal-container-body > div > div > div.detail-content > div.record-drawer.visible > div > div.record-write-area > div.write-area > div")
+));
+
+// Cuộn phần tử vào giữa màn hình nếu bị che khuất
+((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+
+// Đảm bảo phần tử có thể click và có thể nhập liệu
+if (element.isDisplayed() && element.isEnabled()) {
+    // Nhập dữ liệu vào phần tử
+    element.sendKeys("Medical note test: Paracetamol 500mg x 2 tablets daily for 5 days.");
 } else {
-    System.out.println("Ít hơn 4 nút, không click được nút thứ 4.");
+    System.out.println("Phần tử không thể tương tác.");
 }
 sleep(3000);
 
-// Tìm textarea bằng XPath mới
-WebElement textarea3 = driver.findElement(By.xpath(
-        "/html/body/div[1]/div/div[1]/div/div[2]/div/div[17]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div[14]/div/div/div[2]/div/div/div/div/textarea"));
-
-// Click cho nó focus
-textarea3.click();
-
-// Xóa nội dung cũ (nếu có)
-textarea3.clear();
-
-// Nhập nội dung mới
-textarea3.sendKeys("Dữ liệu muốn nhập");
-
-// Bước 6: Chờ và click vào nút Save
-WebElement saveButton3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-        "/html/body/div[1]/div/div[1]/div/div[2]/div/div[17]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/div/div[14]/div/div/div[3]/div/div/button[2]")));
-saveButton.click();
-
-// Bước 7: Chờ nút Save biến mất (hoặc toast xuất hiện nếu có) để xác nhận lưu thành công
-wait.until(ExpectedConditions.invisibilityOf(saveButton3));
-sleep(3000);
-
-// Click vào nút thứ 6
-if (iconBoxes.size() >= 6) {
-    iconBoxes.get(5).click();
-} else {
-    System.out.println("Ít hơn 4 nút, không click được nút thứ 6.");
-}
-sleep(3000);
 
 
 
 
 
 
+    }
 
-
-
-
-
-
-
+    @Test
+    void testName() {
+        
     }
 
 }
