@@ -187,7 +187,6 @@ public class MakeReservationTest {
         Actions actions = new Actions(driver);
         actions.moveToElement(randomSlot).click().perform();
 
-
         System.out.println("Choosed random time");
         sleep(500);
 

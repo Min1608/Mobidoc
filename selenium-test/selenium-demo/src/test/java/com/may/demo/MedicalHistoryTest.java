@@ -122,8 +122,6 @@ public class MedicalHistoryTest {
         targetElement.click();
         sleep(1000);
 
-
-
         // Tìm phần tử cha có class 'reserve-list reserve-tab'
         WebElement container = driver.findElement(By.cssSelector(".reserve-list.reserve-tab"));
 
@@ -298,8 +296,6 @@ public class MedicalHistoryTest {
             ));
 
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", item);
-
-            // Click 2 lần cách nhau nửa giây
             item.click();
             sleep(500);
             item.click();
@@ -421,7 +417,6 @@ public class MedicalHistoryTest {
         for (WebElement button : buttons) {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", button);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
-            // Nếu click làm thay đổi DOM, bạn có thể cần chờ hoặc xử lý lại danh sách
         }
 
         WebElement secondButton = wait.until(ExpectedConditions.elementToBeClickable(

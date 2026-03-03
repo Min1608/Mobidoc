@@ -176,7 +176,7 @@ public class PatientRegistrationTest {
         System.out.println("Start: Fill form");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        // // Input patient information
+        // Input patient information
         // Create Phone number random by format 09XX-XXX-XXXX
         String randomPhone = generateRandomPhone();
 
